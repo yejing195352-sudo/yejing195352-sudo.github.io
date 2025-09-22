@@ -6,14 +6,24 @@
   <title>Content Manager</title>
 </head>
 <body>
+  <!-- 
+    这是我们之前所有版本都缺失的、最致命的一环：
+    为 Decap CMS 提供一个可以渲染自身的容器。
+  -->
+  <div id="nc-root"></div>
+
   <!-- 加载 Decap CMS 脚本 -->
   <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  
   <!-- 
-    将所有配置直接嵌入HTML，彻底绕开CDN缓存问题 
+    将所有配置直接嵌入HTML，并告诉CMS使用我们提供的容器 
   -->
   <script>
     window.CMS.init({
       config: {
+        // 关键！告诉CMS在哪里渲染UI
+        cms_root: "nc-root",
+
         backend: {
           name: "github",
           repo: "yejing195352-sudo/yejing195352-sudo.github.io",
