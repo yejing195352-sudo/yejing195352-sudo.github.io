@@ -4,15 +4,15 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
   <!-- 
-    这个脚本是关键！它会等待Decap CMS加载完成后，
-    用我们的配置文件来初始化它。
+    使用 ESM (ECMAScript Modules) 方式加载 Decap CMS.
+    'type="module"' 是这里的关键！
   -->
-  <script>
-    window.CMS.init();
+  <script type="module">
+    import CMS, { init } from 'https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js';
+    init();
   </script>
 </body>
 </html>
