@@ -1,7 +1,7 @@
 # 后端配置：告诉CMS如何连接到你的GitHub仓库
 backend:
   name: github
-  repo: yejing195352/yejing195352.github.io  # 例子: zhangsan/zhangsan.github.io
+  repo: yejing195352-sudo/yejing195352-sudo.github.io  # 例子: zhangsan/zhangsan.github.io
   branch: main                         # 内容将保存到 main 分支
 
 # 媒体文件（如图片）的存储位置
