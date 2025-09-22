@@ -3,13 +3,13 @@ name: Build and Deploy Hexo Blog
 on:
   push:
     branches:
-      - main  # 当 main 分支有更新时触发
+      - main
 
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    permissions:          # <--- 添加这一行
-      contents: write     # <--- 添加这一行，授予写入权限
+    permissions:
+      contents: write
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
@@ -17,18 +17,17 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18' # 使用 Node.js 18 版本
+          node-version: '18'
           cache: 'npm'
 
       - name: Install Dependencies
         run: npm install
 
       - name: Build Website
-        run: hexo generate # 运行 hexo g 生成静态文件
+        run: npx hexo generate # <--- 就是这里做了修改
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
-          # publish_branch: gh-pages # 默认就是 gh-pages 分支
