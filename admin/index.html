@@ -4,19 +4,13 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Content Manager</title>
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
   <!-- 
-    这个脚本是最后的保险。
-    它会监听“DOMContentLoaded”事件，
-    确保在整个HTML文档都被完全加载和解析后，
-    才去执行初始化。
+    这是解决问题的关键：
+    将脚本放在 body 的最末尾，确保在它运行前，
+    整个页面都已经准备就绪。
   -->
-  <script>
-    window.addEventListener('DOMContentLoaded', (event) => {
-      window.CMS.init();
-    });
-  </script>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </body>
 </html>
