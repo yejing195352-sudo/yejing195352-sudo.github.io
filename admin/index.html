@@ -3,13 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>博客内容管理</title>
+  <title>Content Manager</title>
+  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
 </head>
 <body>
-  <!-- Decap CMS 主容器 -->
-  <div id="cms-root"></div>
-  
-  <!-- 加载 Decap CMS 脚本 -->
-  <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+  <!-- 
+    这个脚本是关键！它会等待Decap CMS加载完成后，
+    用我们的配置文件来初始化它。
+  -->
+  <script>
+    window.CMS.init();
+  </script>
 </body>
 </html>
