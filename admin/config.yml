@@ -8,18 +8,6 @@ backend:
 media_folder: "source/images/uploads"
 public_folder: "/images/uploads"
 
-collections:
-  - name: "posts"
-    label: "我的文章"
-    folder: "source/_posts"
-    create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
-    fields:
-      - { label: "文章标题", name: "title", widget: "string" }
-      - { label: "发布日期", name: "date", widget: "datetime" }
-      - { label: "分类", name: "categories", widget: "string", required: false }
-      - { label: "标签", name: "tags", widget: "list", required: false }
-      - { label: "正文内容", name: "body", widget: "markdown" }
 
 
 # 定义内容集合，这里我们只定义“文章”
