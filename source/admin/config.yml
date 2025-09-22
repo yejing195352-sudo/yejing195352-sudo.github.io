@@ -8,6 +8,7 @@ backend:
 media_folder: "source/images/uploads" # 上传的图片将保存在这里
 public_folder: "/images/uploads"      # 在文章中引用图片时的路径
 
+
 # 定义内容集合，这里我们只定义“文章”
 collections:
   - name: "posts" # 集合的唯一标识符
