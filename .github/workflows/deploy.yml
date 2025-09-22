@@ -8,6 +8,8 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
+    permissions:          # <--- 添加这一行
+      contents: write     # <--- 添加这一行，授予写入权限
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
